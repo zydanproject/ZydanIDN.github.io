@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plot Data</title>
+    <!-- Include Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="plot"></div>
+
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        var vX = urlParams.get('vX');
+        var vY = urlParams.get('vY');
+
+        // Fungsi untuk mengubah string vX dan vY menjadi array
+        function ret(Bebas, Terikat) {
+            var Bebas = Bebas.split(",");
+            var Terikat = Terikat.split(",");
+            var BuT = [Bebas, Terikat];
+            return BuT;
+        }
+
+        var Data = ret(vX, vY);
+
+        // Fungsi untuk membuat plot
+        function buatPlot(Data) {
+            var trace1 = {
+                x: Data[0],
+                y: Data[1],
+                mode: 'markers',
+                type: 'scatter'
+            };
+
+            var layout = {
+                title: 'Plot Data',
+                xaxis: {
+                    title: 'Variabel Bebas'
+                },
+                yaxis: {
+                    title: 'Variabel Terikat'
+                }
+            };
+
+            var data = [trace1];
+
+            Plotly.newPlot('plot', data, layout);
+        }
+
+        // Memanggil fungsi untuk membuat plot
+        buatPlot(Data);
+    </script>
+</body>
+</html>

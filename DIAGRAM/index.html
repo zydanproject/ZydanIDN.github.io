@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>MASUKKAN NILAI UNTUK DIAGRAM!</h2>
+    <form id="dataForm" onsubmit="submitForm(event)">
+      <label for="vX">Masukkan var X:</label>
+      <input type="text" id="vX" name="vX"><br><br>
+      <label for="vY">Masukkan var Y:</label>
+      <input type="text" id="vY" name="vY"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      var vX = document.getElementById('vX').value;
+      var vY = document.getElementById('vY').value;
+      var url = "plot.html?vX=" + encodeURIComponent(vX) + "&vY=" + encodeURIComponent(vY);
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
