@@ -1,60 +1,98 @@
+/* styles.css */
+
 body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f5f5f5;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Menghilangkan scroll */
 }
 
 .container {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    padding: 30px;
-    max-width: 600px;
-    width: 80%;
+    box-sizing: border-box; /* Pastikan padding termasuk dalam width */
 }
 
 .input-container {
     margin-bottom: 20px;
 }
 
-textarea {
+#inputText {
+    font-family: "MOBO-Regular.otf";
     width: 100%;
     height: 150px;
     padding: 10px;
-    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     resize: none;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Pastikan padding termasuk dalam width */
 }
 
 .output-container {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.output-container div {
-    display: inline-block;
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
+    display: none; /* Menyembunyikan outputContainer */
 }
 
 .copy-button {
-    padding: 10px 20px;
-    background-color: #28a745;
+    font-family: "YasashisaGothicBold-V2.otf";
+    background: linear-gradient(to right, #ADBC9F 0%, #436850 50%, #12372A 100%); /* Green gradient */
+    background-size: 200% auto; /* Creates two gradients side-by-side */
     color: white;
     border: none;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 10px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 20px;
+    animation: gradient 5s ease infinite; /* Animation for smooth loop */
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 0%; /* Starts with left gradient */
+    }
+    50% {
+      background-position: 100% 0%; /* Moves to right gradient at midpoint */
+    }
+    100% {
+      background-position: 0% 0%; /* Back to left gradient for loop */
+    }
 }
 
 .copy-button:hover {
-    background-color: #218838;
+    background: linear-gradient(to right, #001524 0%, #001524 50%, #001524 100%); /* Blue gradient */
+}
+
+@font-face {
+    font-family: "Fontspring-DEMO-greycliffcf";
+    src: url('assets/Fontspring-DEMO-greycliffcf-bold.otf'); 
+}
+
+@font-face {
+    font-family: "MOBO-Bold.otf";
+    src: url('assets/MOBO-Bold.otf'); 
+}
+
+@font-face {
+    font-family: "YasashisaGothicBold-V2.otf";
+    src: url('assets/YasashisaGothicBold-V2.otf'); 
+}
+
+@font-face {
+    font-family: "MOBO-Regular.otf";
+    src: url('assets/MOBO-Regular.otf'); 
 }
